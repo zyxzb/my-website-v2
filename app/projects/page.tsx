@@ -3,7 +3,7 @@ import Small from '../components/Small';
 const ProjectsPage = () => {
   return (
     <div>
-      <Small>Projects</Small>
+      <Small>Projects Page</Small>
       {/* <ProjectsGallery /> */}
     </div>
   );

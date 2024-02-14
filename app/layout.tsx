@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
+
 import Header from './components/Header';
 import Nav from './components/Nav';
+import { inconsolata } from '@/fonts/fonts';
 
-const inter = Inter({ subsets: ['latin'] });
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} bg-bgDarkBlue`}>
+      <body className={`${inconsolata.className} bg-bgDarkBlue`}>
         <Header />
         <div className='relative mx-auto flex w-full max-w-screen-2xl tracking-wide'>
           <Nav />

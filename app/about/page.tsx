@@ -3,7 +3,7 @@ import Small from '../components/Small';
 const AboutPage = () => {
   return (
     <div>
-      <Small>About</Small>
+      <Small>About Page</Small>
       <p>This page has no content yet</p>
     </div>
   );

@@ -1,6 +1,19 @@
 import HomeTextSection from './components/HomeTextSection';
 import Small from './components/Small';
-import TitleAnimation from './components/TitleAnimation';
+
+import dynamic from 'next/dynamic';
+
+const DynamicTitleAnimation = dynamic(
+  () => import('./components/TitleAnimation'),
+  {
+    loading: () => (
+      <h1 className='text-bold my-8 text-3xl font-bold sm:text-5xl md:my-14'>
+        Loading...
+      </h1>
+    ),
+    ssr: false,
+  },
+);
 
 const HomePage = () => {
   return (
@@ -8,7 +21,7 @@ const HomePage = () => {
       <Small>Home Page</Small>
       <div className='mx-auto max-w-[800px] text-center'>
         <span className='text-bold my-10 sm:text-xl'>Hey there! 👋</span>
-        <TitleAnimation />
+        <DynamicTitleAnimation />
         <HomeTextSection />
       </div>
     </div>
