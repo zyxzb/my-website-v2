@@ -1,6 +1,6 @@
 const FormText = () => {
   return (
-    <>
+    <section className='mb-16 mt-10 sm:text-lg'>
       <p>Let&apos;s Work Together on Your Next Frontend/React Project!</p>
       <p className='my-6'>
         If you&apos;re looking for a reliable and enthusiastic Frontend/React
@@ -13,7 +13,7 @@ const FormText = () => {
         you may have, and I will respond promptly. Let&apos;s take your project
         to the next level!
       </p>
-    </>
+    </section>
   );
 };
 
