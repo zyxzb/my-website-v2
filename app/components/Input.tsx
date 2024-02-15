@@ -27,7 +27,9 @@ const Input = ({
       </label>
       <input
         id={name}
-        className={cn(`w-full !outline-none ${error ? 'border-rose-400' : ''}`)}
+        className={cn(
+          `test-xs w-full !outline-none ${error ? 'border-rose-400' : ''}`,
+        )}
         type={type}
         placeholder={placeholder}
         autoComplete='off'
@@ -35,7 +37,7 @@ const Input = ({
         {...rest}
       />
       {error && (
-        <span className='error-message mt-1 flex text-rose-400'>
+        <span className='error-message mt-1 flex text-sm text-rose-400'>
           {error.message}
         </span>
       )}

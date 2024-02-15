@@ -39,7 +39,7 @@ const TextArea = ({
         {...rest}
       />
       {error && (
-        <span className='error-message mt-1 flex text-rose-400'>
+        <span className='error-message mt-1 flex text-sm text-rose-400'>
           {error.message}
         </span>
       )}

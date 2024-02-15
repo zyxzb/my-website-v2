@@ -54,7 +54,7 @@ const Form = () => {
     <div className='flex flex-col gap-10'>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='mx-auto flex w-full max-w-[600px] flex-col gap-8'
+        className='mx-auto flex w-full max-w-[600px] flex-col gap-4'
       >
         <div className='flex flex-col gap-4 sm:flex-row'>
           <Input
