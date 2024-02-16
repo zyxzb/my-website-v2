@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  form input,
-  textarea {
-    @apply border bg-transparent p-2;
-  }
-}
-
 * {
   scrollbar-width: thin;
   scrollbar-color: #12232e;

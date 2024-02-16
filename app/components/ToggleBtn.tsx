@@ -1,6 +1,7 @@
 'use client';
 
 import { useGlobalStore } from '@/lib/store';
+import { cn } from '@/lib/utils';
 
 const ToggleBtn = () => {
   const toggleNav = useGlobalStore((store) => store.toggleNav);
@@ -8,11 +9,9 @@ const ToggleBtn = () => {
 
   return (
     <button
-      className={
-        isNavOpen
-          ? 'active group visible relative overflow-hidden md:invisible'
-          : 'group visible relative overflow-hidden md:invisible'
-      }
+      className={cn(
+        `group visible relative overflow-hidden md:invisible ${isNavOpen ? 'active' : ''}`,
+      )}
       onClick={() => toggleNav()}
       type='button'
       aria-label='toggle navigation'
