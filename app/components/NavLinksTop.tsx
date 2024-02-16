@@ -21,7 +21,7 @@ const NavLinksTop = () => {
               <Link
                 href={link.url}
                 onClick={() => closeNav()}
-                className={cn(`xSmallHeight:py-2 hover:text-textDarkBlue flex w-full items-center py-4 capitalize transition duration-300 
+                className={cn(`flex w-full items-center py-4 capitalize transition duration-300 hover:text-textDarkBlue xSmallHeight:py-2 
                 ${pathname === link.url ? 'text-textDarkBlue' : 'text-textLightBlue'}`)}
               >
                 <div className='pr-3'>{link.icon}</div>
