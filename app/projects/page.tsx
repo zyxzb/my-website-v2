@@ -1,10 +1,23 @@
-import Small from '../components/Small';
+import { client } from '@/lib/sanity';
 
-const ProjectsPage = () => {
+import Small from '../components/Small';
+import ProjectsGallery from '../components/ProjectsGallery';
+
+export const revalidate = 60;
+
+const getAllProjects = async () => {
+  const query = `*[_type == 'project']`;
+  const data = await client.fetch(query);
+  return data;
+};
+
+const ProjectsPage = async () => {
+  const projects = await getAllProjects();
+
   return (
     <div>
       <Small>Projects Page</Small>
-      {/* <ProjectsGallery /> */}
+      <ProjectsGallery projects={projects} />
     </div>
   );
 };

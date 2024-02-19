@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
+    "@sanity/image-url": "^1.0.2",
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.5",
     "next": "14.1.0",
+    "next-sanity": "^7.0.10",
     "nodemailer": "^6.9.9",
     "react": "^18",
     "react-dom": "^18",
