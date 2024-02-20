@@ -30,7 +30,7 @@ const TextArea = ({
       <textarea
         id={name}
         className={cn(
-          `w-full border bg-transparent p-2 align-top !outline-none ${error ? 'border-rose-400' : ''}`,
+          `w-full border border-bgDarkBlue bg-transparent p-2 align-top !outline-none transition-[border-color] duration-500 dark:border-textLightBlue ${error ? 'border-rose-400' : ''}`,
         )}
         placeholder={placeholder}
         autoComplete='off'

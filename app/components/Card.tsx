@@ -20,9 +20,9 @@ interface CardProps {
 const Card = ({ project }: CardProps) => {
   const { name, githubUrl, liveUrl, images, tags } = project;
   return (
-    <div className='group relative mb-3 inline-block w-full overflow-hidden rounded-md last-of-type:mb-0 lg:mb-6'>
+    <div className='group relative mb-3 inline-block w-full overflow-hidden rounded-md border border-bgDarkBlue transition-[border-color] duration-500 last-of-type:mb-0 lg:mb-6 dark:border-textLightBlue'>
       {/* Top */}
-      <div className='absolute left-0 right-0 top-0 z-10 flex justify-between bg-slate-500 p-2'>
+      <div className='flex justify-between p-2 lg:p-3'>
         <div className='line-clamp-1 w-[70%]'>{name}</div>
         <div className='flex gap-2'>
           {githubUrl ? (
@@ -54,14 +54,14 @@ const Card = ({ project }: CardProps) => {
           width={500}
           height={300}
         />
-        <div className='absolute bottom-0 left-0 right-0 top-0 bg-black/20 transition-all group-hover:bg-transparent' />
+        <div className='' />
       </div>
       {/* Tech  */}
-      <div className={`max-h-max w-full bg-slate-500/70 p-2 text-sm`}>
-        <ul className='flex flex-wrap gap-2 text-center'>
+      <div className={`max-h-max w-full p-2 text-sm lg:p-3`}>
+        <ul className='flex flex-wrap gap-2 text-center lg:gap-3'>
           {tags.map((el) => (
             <li
-              className='max-h-max cursor-pointer rounded-2xl border p-2 transition hover:border-textDarkBlue hover:text-textDarkBlue'
+              className='max-h-max cursor-pointer rounded-2xl border border-bgDarkBlue p-2 transition-[border-color] duration-500 hover:border-textDarkBlue hover:text-textDarkBlue hover:transition dark:border-textLightBlue dark:hover:border-textDarkBlue'
               key={el}
             >
               {el}

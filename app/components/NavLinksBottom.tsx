@@ -5,7 +5,7 @@ import Link from 'next/link';
 const NavLinksBottom = () => {
   return (
     <div>
-      <ul className='xSmallHeight:flex-row xSmallHeight:justify-between flex flex-col p-6'>
+      <ul className='flex flex-col p-6 xSmallHeight:flex-row xSmallHeight:justify-between'>
         {socialLinks.map((link) => {
           return (
             <li key={link.id}>
@@ -13,9 +13,9 @@ const NavLinksBottom = () => {
                 href={link.url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-textLightBlue hover:text-textDarkBlue xSmallHeight:py-0 flex items-center py-4 capitalize transition duration-300'
+                className='flex items-center py-4 capitalize hover:text-textDarkBlue hover:transition xSmallHeight:py-0'
               >
-                <div className='xSmallHeight:pr-1 pr-3'>{link.icon}</div>
+                <div className='pr-3 xSmallHeight:pr-1'>{link.icon}</div>
                 {link.name}
               </Link>
             </li>
@@ -24,9 +24,9 @@ const NavLinksBottom = () => {
         <li>
           <Link
             href='/contact'
-            className='text-textLightBlue hover:text-textDarkBlue xSmallHeight:py-0 flex items-center py-4 capitalize transition duration-300'
+            className='flex items-center py-4 capitalize hover:text-textDarkBlue hover:transition xSmallHeight:py-0'
           >
-            <div className='xSmallHeight:pr-1 pr-3'>
+            <div className='pr-3 xSmallHeight:pr-1'>
               <MdMail />
             </div>
             Mail

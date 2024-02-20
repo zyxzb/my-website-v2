@@ -4,13 +4,13 @@ const NavSkills = () => {
   return (
     <div className='smallHeight:hidden'>
       <ul
-        className='text-textLightBlue icons flex flex-wrap gap-3 p-6 text-2xl'
+        className='icons flex flex-wrap gap-3 p-6 text-2xl'
         aria-label='Skills list'
       >
         {iconsSkills.map((icon) => (
           <li
             key={icon.id}
-            className='hover:text-textDarkBlue cursor-pointer transition'
+            className='cursor-pointer hover:text-textDarkBlue hover:transition'
             title={icon.title}
           >
             {icon.icon}

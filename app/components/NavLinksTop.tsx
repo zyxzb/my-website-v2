@@ -13,7 +13,7 @@ const NavLinksTop = () => {
   const closeNav = useGlobalStore((state) => state.closeNav);
 
   return (
-    <div className='text-textLightBlue'>
+    <div>
       <ul className='flex flex-col p-6'>
         {navLinks.map((link) => {
           return (
@@ -21,8 +21,11 @@ const NavLinksTop = () => {
               <Link
                 href={link.url}
                 onClick={() => closeNav()}
-                className={cn(`flex w-full items-center py-4 capitalize transition duration-300 hover:text-textDarkBlue xSmallHeight:py-2 
-                ${pathname === link.url ? 'text-textDarkBlue' : 'text-textLightBlue'}`)}
+                className={cn(
+                  `flex w-full items-center py-4 capitalize hover:text-textDarkBlue hover:transition xSmallHeight:py-2 ${
+                    pathname === link.url ? 'text-textDarkBlue' : ''
+                  }`,
+                )}
               >
                 <div className='pr-3'>{link.icon}</div>
                 {link.name}

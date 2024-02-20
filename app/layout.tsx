@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast';
 
 import Header from './components/Header';
 import Nav from './components/Nav';
+import ThemeProvider from '@/providers/ThemeProvider';
 
 import { inconsolata } from '@/fonts/fonts';
 import './globals.css';
@@ -15,16 +16,20 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang='en'>
-      <body className={`${inconsolata.className} bg-bgDarkBlue`}>
-        <Header />
-        <div className='relative mx-auto flex w-full max-w-screen-2xl tracking-wide'>
-          <Nav />
-          <main className='h-screen w-full overflow-auto px-3 pb-[40px] pt-24 text-textLightBlue transition-all duration-300 md:px-6'>
-            {children}
-          </main>
-        </div>
-        <Toaster />
+    <html lang='en' data-mode='dark'>
+      <body
+        className={`${inconsolata.className} bg-textLightBlue text-bgDarkBlue transition-colors duration-500 dark:bg-bgDarkBlue dark:text-textLightBlue`}
+      >
+        <ThemeProvider>
+          <Header />
+          <div className='relative mx-auto flex w-full max-w-screen-2xl tracking-wide'>
+            <Nav />
+            <main className='h-screen w-full overflow-auto px-3 pb-[40px] pt-24 md:px-6'>
+              {children}
+            </main>
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

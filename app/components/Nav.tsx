@@ -13,14 +13,15 @@ const Nav = () => {
   return (
     <nav
       className={cn(
-        `fixed bottom-0 z-30 flex h-[calc(100dvh-56px)] w-[240px] min-w-[240px] flex-col justify-between overflow-auto border-r-[1px] bg-bgDarkBlue transition-all md:relative md:mt-14 md:-translate-x-[0] smallHeight:text-xs
-        ${isNavOpen ? `-translate-x-[0]` : `-translate-x-[240px]`}`,
+        `fixed bottom-0 z-30 flex h-[calc(100dvh-56px)] w-[240px] min-w-[240px] flex-col justify-between overflow-auto border-r-[1px] border-bgDarkBlue bg-textLightBlue text-bgDarkBlue transition duration-500 md:relative md:mt-14 md:-translate-x-[0] smallHeight:text-xs dark:border-textLightBlue dark:bg-bgDarkBlue dark:text-textLightBlue ${
+          isNavOpen ? `-translate-x-[0]` : `-translate-x-[240px]`
+        }`,
       )}
     >
       <NavLinksTop />
-      <div className='mx-auto w-[80%] border-b-[1px] opacity-50' />
+      <div className='mx-auto w-[80%] border-b-[1px] border-bgDarkBlue opacity-50 transition duration-500 dark:border-textLightBlue' />
       <NavSkills />
-      <div className='mx-auto w-[80%] border-b-[1px] opacity-50 smallHeight:hidden' />
+      <div className='mx-auto w-[80%] border-b-[1px] border-bgDarkBlue opacity-50 transition duration-500 smallHeight:hidden dark:border-textLightBlue' />
       <NavLinksBottom />
     </nav>
   );
