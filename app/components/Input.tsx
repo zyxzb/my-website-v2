@@ -29,7 +29,7 @@ const Input = ({
       <input
         id={name}
         className={cn(
-          `test-xs w-full border border-bgDarkBlue bg-transparent p-2 !outline-none transition-[border-color] duration-500 dark:border-textLightBlue ${error ? 'border-rose-400 dark:border-rose-400' : ''}`,
+          `test-xs border-darkBlue w-full border bg-transparent p-2 !outline-none transition-[border-color] duration-500 dark:border-white ${error ? 'border-rose-400 dark:border-rose-400' : ''}`,
         )}
         type={type}
         placeholder={placeholder}

@@ -10,11 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bgDark: '#12232E',
-        bgLightBlue: '#007CC7',
-        bgDarkBlue: '#203647',
-        textLightBlue: '#EEFBFB',
-        textDarkBlue: '#4DA2DA',
+        black: '#12232E',
+        white: '#EEFBFB',
+        darkBlue: '#203647',
+        lightBlue: '#4DA2DA',
       },
       fontFamily: {
         sans: ['Inconsolata', 'ui-sans-serif', 'system-ui'],

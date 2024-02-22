@@ -13,7 +13,7 @@ const NavLinksBottom = () => {
                 href={link.url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center py-4 capitalize hover:text-textDarkBlue hover:transition xSmallHeight:py-0'
+                className='hover:text-lightBlue flex items-center py-4 capitalize hover:transition xSmallHeight:py-0'
               >
                 <div className='pr-3 xSmallHeight:pr-1'>{link.icon}</div>
                 {link.name}
@@ -24,7 +24,7 @@ const NavLinksBottom = () => {
         <li>
           <Link
             href='/contact'
-            className='flex items-center py-4 capitalize hover:text-textDarkBlue hover:transition xSmallHeight:py-0'
+            className='hover:text-lightBlue flex items-center py-4 capitalize hover:transition xSmallHeight:py-0'
           >
             <div className='pr-3 xSmallHeight:pr-1'>
               <MdMail />

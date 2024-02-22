@@ -32,7 +32,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   // if (!mounted) {
   //   return (
   //     <div
-  //       className='flex h-screen items-center justify-center bg-bgDarkBlue text-textLightBlue'
+  //       className='flex h-screen items-center justify-center bg-darkBlue text-white'
   //       aria-label='Loading...'
   //       role='status'
   //     >

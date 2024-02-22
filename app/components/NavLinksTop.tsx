@@ -22,8 +22,8 @@ const NavLinksTop = () => {
                 href={link.url}
                 onClick={() => closeNav()}
                 className={cn(
-                  `flex w-full items-center py-4 capitalize hover:text-textDarkBlue hover:transition xSmallHeight:py-2 ${
-                    pathname === link.url ? 'text-textDarkBlue' : ''
+                  `hover:text-lightBlue flex w-full items-center py-4 capitalize hover:transition xSmallHeight:py-2 ${
+                    pathname === link.url ? 'text-lightBlue' : ''
                   }`,
                 )}
               >
