@@ -4,11 +4,11 @@ import { FieldError } from 'react-hook-form';
 interface InputProps {
   type: string;
   placeholder: string;
-  error: FieldError | undefined;
-  valueAsNumber?: boolean;
-  register: any;
+  error?: FieldError | undefined;
+  register?: any;
   label: string;
   name: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = ({
@@ -18,6 +18,7 @@ const Input = ({
   error,
   register,
   name,
+  onChange,
   ...rest
 }: InputProps) => {
   return (
@@ -33,7 +34,8 @@ const Input = ({
         type={type}
         placeholder={placeholder}
         autoComplete='off'
-        {...register(name)}
+        onChange={onChange}
+        {...(register && register(name))}
         {...rest}
       />
       {error && (

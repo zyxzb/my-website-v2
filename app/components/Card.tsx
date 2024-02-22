@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { urlFor } from '@/lib/sanity';
@@ -20,7 +22,7 @@ interface CardProps {
 const Card = ({ project }: CardProps) => {
   const { name, githubUrl, liveUrl, images, tags } = project;
   return (
-    <div className='group relative mb-3 inline-block w-full overflow-hidden rounded-md border border-bgDarkBlue transition-[border-color] duration-500 last-of-type:mb-0 lg:mb-6 dark:border-textLightBlue'>
+    <div className='group relative mb-3 inline-block w-full overflow-hidden rounded-md border border-bgDarkBlue transition-[border-color] duration-500 last-of-type:mb-0 dark:border-textLightBlue lg:mb-6'>
       {/* Top */}
       <div className='flex justify-between p-2 lg:p-3'>
         <div className='line-clamp-1 w-[70%]'>{name}</div>
@@ -61,7 +63,7 @@ const Card = ({ project }: CardProps) => {
         <ul className='flex flex-wrap gap-2 text-center lg:gap-3'>
           {tags.map((el) => (
             <li
-              className='max-h-max cursor-pointer rounded-2xl border border-bgDarkBlue p-2 transition-[border-color] duration-500 hover:border-textDarkBlue hover:text-textDarkBlue hover:transition dark:border-textLightBlue dark:hover:border-textDarkBlue'
+              className='max-h-max cursor-pointer rounded-2xl border border-bgDarkBlue p-2 transition-[border-color] hover:border-textDarkBlue hover:text-textDarkBlue hover:transition dark:border-textLightBlue dark:hover:border-textDarkBlue'
               key={el}
             >
               {el}
