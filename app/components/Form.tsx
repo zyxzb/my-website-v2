@@ -103,7 +103,7 @@ const Form = () => {
         <button
           type='submit'
           disabled={isLoading}
-          className='bg-lightBlue dark:hover:text-darkBlue p-2 text-white hover:bg-black hover:transition dark:hover:bg-white'
+          className='bg-lightBlue p-2 text-white hover:bg-black hover:transition dark:hover:bg-white dark:hover:text-darkBlue'
         >
           {isLoading ? 'Loading...' : 'Submit'}
         </button>

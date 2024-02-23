@@ -10,7 +10,7 @@ const NavSkills = () => {
         {iconsSkills.map((icon) => (
           <li
             key={icon.id}
-            className='hover:text-lightBlue cursor-pointer hover:transition'
+            className='cursor-pointer hover:text-lightBlue hover:transition'
             title={icon.title}
           >
             {icon.icon}

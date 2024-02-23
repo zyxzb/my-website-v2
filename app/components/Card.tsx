@@ -22,7 +22,7 @@ interface CardProps {
 const Card = ({ project }: CardProps) => {
   const { name, githubUrl, liveUrl, images, tags } = project;
   return (
-    <div className='border-darkBlue group relative mb-3 inline-block w-full overflow-hidden rounded-md border transition-[border-color] duration-500 last-of-type:mb-0 dark:border-white lg:mb-6'>
+    <div className='group relative mb-3 inline-block w-full overflow-hidden rounded-md border border-darkBlue transition-[border-color] duration-500 last-of-type:mb-0 dark:border-white lg:mb-6'>
       {/* Top */}
       <div className='flex justify-between p-2 lg:p-3'>
         <div className='line-clamp-1 w-[70%]'>{name}</div>
@@ -63,7 +63,7 @@ const Card = ({ project }: CardProps) => {
         <ul className='flex flex-wrap gap-2 text-center lg:gap-3'>
           {tags.map((el) => (
             <li
-              className='border-darkBlue hover:border-lightBlue hover:text-lightBlue dark:hover:border-lightBlue max-h-max cursor-pointer rounded-2xl border p-2 transition-[border-color] hover:transition dark:border-white'
+              className='max-h-max cursor-pointer rounded-2xl border border-darkBlue p-2 transition-[border-color] hover:border-lightBlue hover:text-lightBlue hover:transition dark:border-white dark:hover:border-lightBlue'
               key={el}
             >
               {el}

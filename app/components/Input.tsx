@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 import { FieldError } from 'react-hook-form';
+import { memo } from 'react';
 
 interface InputProps {
   type: string;
@@ -29,7 +30,9 @@ const Input = ({
       <input
         id={name}
         className={cn(
-          `test-xs border-darkBlue w-full border bg-transparent p-2 !outline-none transition-[border-color] duration-500 dark:border-white ${error ? 'border-rose-400 dark:border-rose-400' : ''}`,
+          `test-xs w-full border border-darkBlue bg-transparent p-2 !outline-none transition-[border-color] duration-0 dark:border-white ${
+            error ? 'border-rose-400 dark:border-rose-400' : ''
+          }`,
         )}
         type={type}
         placeholder={placeholder}
@@ -37,7 +40,7 @@ const Input = ({
         onChange={onChange}
         {...(register && register(name))}
         {...rest}
-      />
+      />{' '}
       {error && (
         <span className='error-message mt-1 flex text-sm text-rose-400'>
           {error.message}
@@ -47,4 +50,4 @@ const Input = ({
   );
 };
 
-export default Input;
+export default memo(Input);

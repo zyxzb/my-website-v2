@@ -164,12 +164,12 @@ export const iconsSkills = [
   {
     id: uuidv4(),
     icon: <SiPrisma />,
-    title: 'Prisma ',
+    title: 'Prisma',
   },
   {
     id: uuidv4(),
     icon: <SiTestinglibrary />,
-    title: 'Testinglibrary ',
+    title: 'Testing Library',
   },
 ];
 

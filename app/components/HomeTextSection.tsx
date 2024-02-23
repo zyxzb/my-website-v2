@@ -16,7 +16,7 @@ const HomeTextSection = () => {
       </p>
       <Link
         href='/projects'
-        className='bg-lightBlue dark:hover:text-darkBlue mb-14 p-4 text-white hover:bg-black hover:transition dark:hover:bg-white'
+        className='mb-14 bg-lightBlue p-4 text-white hover:bg-black hover:transition dark:hover:bg-white dark:hover:text-darkBlue'
       >
         My Projects
       </Link>
@@ -24,7 +24,7 @@ const HomeTextSection = () => {
         <p className='mb-10 mt-14 sm:text-lg'>Leave me a message</p>
         <Link
           href='/contact'
-          className='bg-lightBlue dark:hover:text-darkBlue mb-14 p-4 text-white hover:bg-black hover:transition dark:hover:bg-white'
+          className='mb-14 bg-lightBlue p-4 text-white hover:bg-black hover:transition dark:hover:bg-white dark:hover:text-darkBlue'
         >
           Contact
         </Link>

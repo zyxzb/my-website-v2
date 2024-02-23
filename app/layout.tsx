@@ -18,7 +18,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en' data-mode='dark'>
       <body
-        className={`${inconsolata.className} text-darkBlue dark:bg-darkBlue bg-white transition-colors duration-500 dark:text-white`}
+        className={`${inconsolata.className} bg-white text-darkBlue transition-colors duration-500 dark:bg-darkBlue dark:text-white`}
       >
         <ThemeProvider>
           <Header />
