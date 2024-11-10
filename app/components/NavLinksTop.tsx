@@ -1,7 +1,7 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+import { usePathname, Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 
 import { navLinks } from '@/constants/nav-links';
 import { cn } from '@/lib/utils';
@@ -9,6 +9,7 @@ import { useGlobalStore } from '@/lib/store';
 
 const NavLinksTop = () => {
   const pathname = usePathname();
+  const t = useTranslations('Navigation'); // Ścieżka do tłumaczeń
 
   const closeNav = useGlobalStore((state) => state.closeNav);
 
@@ -27,8 +28,8 @@ const NavLinksTop = () => {
                   }`,
                 )}
               >
-                <div className='pr-3'>{link.icon}</div>
-                {link.name}
+                <span className='pr-3'>{link.icon}</span>
+                <span>{t(link.nameKey)}</span>
               </Link>
             </li>
           );

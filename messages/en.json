@@ -1,0 +1,20 @@
+{
+  "HomePage": {
+    "title": "Home Page",
+    "greeting": "Hey there!",
+    "animatedText1": "I'm Bartek..",
+    "animatedText2": "Frontend/React developer..",
+    "animatedText3": "Let's Work Together!",
+    "about": "I have experience in telecommunications and e-commerce, but I realized that I am more interested in writing code. In addition to coding, I enjoy photography, keeping up with new technologies, biking, and listening to electronic music. If you&apos;re looking for a reliable and enthusiastic Frontend/React developer to work with, let&apos;s team up and create something amazing!",
+    "myProjectText": "Check out some of my recent projects",
+    "myProjectButton": "My Projects",
+    "leaveMessageText": "Leave me a message",
+    "leaveMessageButton": "Contact"
+  },
+  "Navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact",
+    "about": "About"
+  }
+}

@@ -1,32 +1,26 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 
 const HomeTextSection = () => {
+  const t = useTranslations('HomePage');
+
   return (
     <section>
-      <p className='my-8 sm:text-lg'>
-        I have experience in telecommunications and e-commerce, but I realized
-        that I am more interested in writing code. In addition to coding, I
-        enjoy photography, keeping up with new technologies, biking, and
-        listening to electronic music. If you&apos;re looking for a reliable and
-        enthusiastic Frontend/React developer to work with, let&apos;s team up
-        and create something amazing.
-      </p>
-      <p className='mb-10 mt-14 sm:text-lg'>
-        Check out some of my recent projects
-      </p>
+      <p className='my-8 sm:text-lg'>{t('about')}</p>
+      <p className='mb-10 mt-14 sm:text-lg'>{t('myProjectText')}</p>
       <Link
         href='/projects'
         className='mb-14 bg-lightBlue p-4 text-white hover:bg-black hover:transition dark:hover:bg-white dark:hover:text-darkBlue'
       >
-        My Projects
+        {t('myProjectButton')}
       </Link>
       <div>
-        <p className='mb-10 mt-14 sm:text-lg'>Leave me a message</p>
+        <p className='mb-10 mt-14 sm:text-lg'> {t('leaveMessageText')}</p>
         <Link
           href='/contact'
           className='mb-14 bg-lightBlue p-4 text-white hover:bg-black hover:transition dark:hover:bg-white dark:hover:text-darkBlue'
         >
-          Contact
+          {t('leaveMessageButton')}
         </Link>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import { client } from '@/lib/sanity';
 
-import Small from '../components/Small';
-import ProjectsGallery from '../components/ProjectsGallery';
+import Small from '../../components/Small';
+import ProjectsGallery from '../../components/ProjectsGallery';
 
 export const revalidate = 60;
 

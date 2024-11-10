@@ -5,25 +5,25 @@ import { v4 as uuidv4 } from 'uuid';
 export const navLinks = [
   {
     id: uuidv4(),
-    name: 'home',
+    nameKey: 'home', // key for translation
     url: '/',
     icon: <AiOutlineHome />,
   },
   {
     id: uuidv4(),
-    name: 'projects',
+    nameKey: 'projects',
     url: '/projects',
     icon: <MdWorkOutline />,
   },
   {
     id: uuidv4(),
-    name: 'contact',
+    nameKey: 'contact',
     url: '/contact',
     icon: <AiOutlineMessage />,
   },
   {
     id: uuidv4(),
-    name: 'about',
+    nameKey: 'about',
     url: '/about',
     icon: <MdPersonOutline />,
   },

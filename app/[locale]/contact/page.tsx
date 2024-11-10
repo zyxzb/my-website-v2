@@ -1,6 +1,6 @@
-import Form from '../components/Form';
-import FormText from '../components/FormText';
-import Small from '../components/Small';
+import Form from '../../components/Form';
+import FormText from '../../components/FormText';
+import Small from '../../components/Small';
 
 const ContactPage = () => {
   return (

@@ -1,6 +1,6 @@
 import { socialLinks } from '@/constants/social-links';
+import { Link } from '@/i18n/routing';
 import { MdMail } from 'react-icons/md';
-import Link from 'next/link';
 
 const NavLinksBottom = () => {
   return (

@@ -1,17 +1,20 @@
 'use client';
 
 import { TypeAnimation } from 'react-type-animation';
+import { useTranslations } from 'next-intl';
 
 const TitleAnimation = () => {
+  const t = useTranslations('HomePage');
+
   return (
     <TypeAnimation
       sequence={[
         1000,
-        "I'm Bartek..",
+        t('animatedText1'),
         2000,
-        'Frontend/React developer..',
+        t('animatedText2'),
         2000,
-        "Let's Work Together",
+        t('animatedText3'),
         1000,
       ]}
       wrapper='h1'

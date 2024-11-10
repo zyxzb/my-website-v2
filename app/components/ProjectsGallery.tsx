@@ -24,6 +24,7 @@ const ProjectsGallery = ({ projects }: ProjectsGalleryProps) => {
     setSearchedProjects(filteredProjects);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedHandleSearch = useCallback(debounce(handleChange, 500), []);
 
   return (

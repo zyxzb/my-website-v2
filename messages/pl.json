@@ -1,0 +1,20 @@
+{
+  "HomePage": {
+    "title": "Strona Głowna",
+    "greeting": "Cześć!",
+    "animatedText1": "Jestem Bartek..",
+    "animatedText2": "Programista Frontend/React..",
+    "animatedText3": "Zacznijmy wspólną pracę!",
+    "about": "Posiadam doświadczenie w telekomunikacji oraz e-commerce, ale zdałem sobie sprawę, że bardziej interesuje mnie pisanie kodu. Oprócz kodowania lubię fotografię, śledzenie rynku nowych technologii, jazdę na rowerze i słuchanie muzyki elektronicznej. Jeśli szukasz rzetelnego i pełnego zapału programisty Frontend/React to zapraszam współpracy. Połączmy siły i stwórzmy coś niesamowitego!",
+    "myProjectText": "Zobacz kilka z moich ostatnich projektów",
+    "myProjectButton": "Moje Projekty",
+    "leaveMessageText": "Napisz do mnie",
+    "leaveMessageButton": "Kontakt"
+  },
+  "Navigation": {
+    "home": "Strona główna",
+    "projects": "Projekty",
+    "contact": "Kontakt",
+    "about": "O nas"
+  }
+}

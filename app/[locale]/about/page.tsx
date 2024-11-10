@@ -1,4 +1,4 @@
-import Small from '../components/Small';
+import Small from '@/app/components/Small';
 
 const AboutPage = () => {
   return (
