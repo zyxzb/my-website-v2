@@ -10,7 +10,6 @@ import Nav from '../components/Nav';
 import ThemeProvider from '@/providers/ThemeProvider';
 
 import { inconsolata } from '@/fonts/fonts';
-import './globals.css';
 
 export const metadata: Metadata = {
   title: 'React / FrontEnd Developer',

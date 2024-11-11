@@ -42,6 +42,11 @@
     "title": "About Page",
     "text": "This page has no content yet"
   },
+  "NotFoundPage": {
+    "title": "Not Found Page",
+    "text": "This page could not be found",
+    "button": "Home page"
+  },
   "Navigation": {
     "home": "Home",
     "projects": "Projects",

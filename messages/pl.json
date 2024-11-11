@@ -42,6 +42,12 @@
     "title": "O mnie",
     "text": "Ta strona jeszcze nie zawiera danych"
   },
+  "NotFoundPage": {
+    "title": "Nie znaleziono",
+    "text": "Strona nie została odnaleziona",
+    "button": "Strona główna"
+
+  },
   "Navigation": {
     "home": "Strona główna",
     "projects": "Projekty",
