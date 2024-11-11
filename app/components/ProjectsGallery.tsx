@@ -4,16 +4,19 @@ import { useCallback, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import debounce from 'lodash/debounce';
 
-import Card, { ProjectProps } from './Card';
+import { ProjectProps } from './ServerCard';
 import Input from './Input';
+import GalleryCards from './GalleryCards';
+import ClientCard from './ClientCard';
 
 interface ProjectsGalleryProps {
   projects: ProjectProps[];
+  children: React.ReactNode;
 }
 
-const ProjectsGallery = ({ projects }: ProjectsGalleryProps) => {
-  const [searchedProjects, setSearchedProjects] =
-    useState<ProjectProps[]>(projects);
+const ProjectsGallery = ({ projects, children }: ProjectsGalleryProps) => {
+  const [searchedProjects, setSearchedProjects] = useState<ProjectProps[]>([]);
+  const [dynamicGallery, setDynamicGallery] = useState(false);
 
   const t = useTranslations('ProjectsPage');
 
@@ -25,6 +28,12 @@ const ProjectsGallery = ({ projects }: ProjectsGalleryProps) => {
         project.tags.some((tag) => tag.toLowerCase().includes(searchTerm)),
     );
     setSearchedProjects(filteredProjects);
+
+    if (searchTerm.length > 0) {
+      setDynamicGallery(true);
+    } else {
+      setDynamicGallery(false);
+    }
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -41,12 +50,14 @@ const ProjectsGallery = ({ projects }: ProjectsGalleryProps) => {
           onChange={debouncedHandleSearch}
         />
       </div>
-      {searchedProjects.length > 0 ? (
-        <div className='columns-1 gap-4 lg:columns-2 lg:gap-7'>
+      {projects.length > 0 && !dynamicGallery ? (
+        <GalleryCards>{children}</GalleryCards>
+      ) : searchedProjects.length > 0 && dynamicGallery ? (
+        <GalleryCards>
           {searchedProjects.map((project) => (
-            <Card key={project._id} project={project} />
+            <ClientCard key={project._id} project={project} />
           ))}
-        </div>
+        </GalleryCards>
       ) : (
         'No results found 😥'
       )}

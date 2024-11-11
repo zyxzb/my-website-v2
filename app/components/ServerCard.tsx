@@ -1,8 +1,7 @@
-'use client';
-
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import { urlFor } from '@/lib/sanity';
+import ImageServer from './ImageServer';
 
 export type ProjectProps = {
   _id: string;
@@ -19,7 +18,7 @@ interface CardProps {
   project: ProjectProps;
 }
 
-const Card = ({ project }: CardProps) => {
+const Card = async ({ project }: CardProps) => {
   const { name, githubUrl, liveUrl, images, tags } = project;
   return (
     <div className='group relative mb-3 inline-block w-full overflow-hidden rounded-md border border-darkBlue transition-[border-color] duration-500 last-of-type:mb-0 dark:border-white lg:mb-6'>
@@ -49,14 +48,13 @@ const Card = ({ project }: CardProps) => {
       </div>
       {/* Img section */}
       <div className='relative'>
-        <Image
+        <ImageServer
           src={urlFor(images[0]).url()}
           alt={name}
           className={`h-full w-full object-cover`}
           width={500}
           height={300}
         />
-        <div className='' />
       </div>
       {/* Tech  */}
       <div className={`max-h-max w-full p-2 text-sm lg:p-3`}>

@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import { useTranslations } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
 
 import GalleryServerWrapper from '@/app/components/GalleryServerWrapper';
 import Small from '@/app/components/Small';

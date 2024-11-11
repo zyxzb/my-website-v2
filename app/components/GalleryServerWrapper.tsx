@@ -1,5 +1,6 @@
 import { client } from '@/lib/sanity';
 import ProjectsGallery from './ProjectsGallery';
+import ServerCard from './ServerCard';
 
 const getAllProjects = async () => {
   const query = `*[_type == 'project']`;
@@ -10,7 +11,13 @@ const getAllProjects = async () => {
 const GalleryServerWrapper = async () => {
   const projects = await getAllProjects();
 
-  return <ProjectsGallery projects={projects} />;
+  return (
+    <ProjectsGallery projects={projects}>
+      {projects.map((project: any) => (
+        <ServerCard key={project._id} project={project} />
+      ))}
+    </ProjectsGallery>
+  );
 };
 
 export default GalleryServerWrapper;
