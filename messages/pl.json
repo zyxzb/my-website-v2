@@ -11,10 +11,41 @@
     "leaveMessageText": "Napisz do mnie",
     "leaveMessageButton": "Kontakt"
   },
+  "ProjectsPage": {
+    "title": "Projekty",
+    "searchInputLabel": "Wyszukaj projekty",
+    "searchInputPlaceholder": "Wyszukaj po nazwie lub tagach.."
+  },
+  "ContactPage": {
+    "title": "Kontakt",
+    "paragraph1": "Zacznijmy wspólnie pracę nad Twoim kolejnym projektem Frontend/React!",
+    "paragraph2": "Jeśli szukasz rzetelnego i pełnego zapału programisty Frontend/React, z którym mógłbyś współpracować, połączmy siły i stwórzmy coś niesamowitego. Zobowiązuję się do świadczenia usług na najwyższym poziomie oraz gwarantuję, że Twój projekt zostanie ukończony na czas i w ramach założonego budżetu.",
+    "paragraph3": "Skontaktuj się ze mną jeśli masz jakiekolwiek pytania lub oferty pracy, a ja odpowiem tak szybko jak to możliwe. Przenieśmy Twój projekt na wyższy poziom!",
+    "inputFirstNameLabel": "Imię",
+    "inputFirstNamePlaceholder": "Imię",
+    "inputLastNameLabel": "Nazwisko",
+    "inputLastNamePlaceholder": "Nazwisko (opcjonalnie)",
+    "inputEmailLabel": "Adres email",
+    "inputEmailPlaceholder": "Adres email",
+    "inputPhoneLabel": "Telefon kontaktowy",
+    "inputPhonePlaceholder": "Telefon kontaktowy (opcjonalnie)",
+    "textAreaLabel": "Twoja wiadomość",
+    "textAreaPlaceholder": "Twoja wiadomość...",
+    "submitButton": "Wyślij",
+    "loadingButton": "Wysyłanie..",
+    "firstNameZodValidation": "Imię jest wymagane",
+    "emailLengthZodValidation": "Email jest wymagany",
+    "emailValidZodValidation": "Email musi być prawidłowy",
+    "messageZodValidation": "Wiadomość jest wymagana"
+  },
+  "AboutPage": {
+    "title": "O mnie",
+    "text": "Ta strona jeszcze nie zawiera danych"
+  },
   "Navigation": {
     "home": "Strona główna",
     "projects": "Projekty",
     "contact": "Kontakt",
-    "about": "O nas"
+    "about": "O mnie"
   }
 }

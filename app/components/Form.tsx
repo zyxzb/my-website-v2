@@ -6,24 +6,29 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useTranslations } from 'next-intl';
 
 import Input from './Input';
 import TextArea from './TextArea';
 
-const validationSchema = z.object({
-  firstName: z.string().min(1, { message: 'First name is required' }),
-  lastName: z.string().optional(),
-  email: z.string().min(1, { message: 'Email is required' }).email({
-    message: 'Must be a valid email',
-  }),
-  phone: z.string().optional(),
-  message: z.string().min(1, { message: 'Message is required' }),
-});
-
-type ValidationSchema = z.infer<typeof validationSchema>;
-
 const Form = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const t = useTranslations('ContactPage');
+
+  const validationSchema = z.object({
+    firstName: z.string().min(1, { message: t('firstNameZodValidation') }),
+    lastName: z.string().optional(),
+    email: z
+      .string()
+      .min(1, { message: t('emailLengthZodValidation') })
+      .email({
+        message: t('emailValidZodValidation'),
+      }),
+    phone: z.string().optional(),
+    message: z.string().min(1, { message: t('messageZodValidation') }),
+  });
+
+  type ValidationSchema = z.infer<typeof validationSchema>;
 
   const {
     register,
@@ -58,44 +63,44 @@ const Form = () => {
       >
         <div className='flex flex-col gap-4 sm:flex-row'>
           <Input
-            label='First Name'
+            label={t('inputFirstNameLabel')}
             type='text'
             name='firstName'
-            placeholder='First Name'
+            placeholder={t('inputFirstNamePlaceholder')}
             error={errors.firstName}
             register={register}
           />
           <Input
-            label='Last Name'
+            label={t('inputLastNameLabel')}
             type='text'
             name='lastName'
-            placeholder='Last Name (optional)'
+            placeholder={t('inputLastNamePlaceholder')}
             error={errors.lastName}
             register={register}
           />
         </div>
         <div className='flex flex-col gap-4 sm:flex-row'>
           <Input
-            label='Your Email Address'
+            label={t('inputEmailLabel')}
             type='email'
             name='email'
-            placeholder='Email Address'
+            placeholder={t('inputEmailPlaceholder')}
             error={errors.email}
             register={register}
           />
           <Input
-            label='Your Phone number'
+            label={t('inputPhoneLabel')}
             type='text'
             name='phone'
-            placeholder='Phone number (optional)'
+            placeholder={t('inputPhonePlaceholder')}
             error={errors.phone}
             register={register}
           />
         </div>
         <TextArea
-          label='Your message'
+          label={t('textAreaLabel')}
           rows='6'
-          placeholder='Your message...'
+          placeholder={t('textAreaPlaceholder')}
           name='message'
           error={errors.message}
           register={register}
@@ -105,7 +110,7 @@ const Form = () => {
           disabled={isLoading}
           className='bg-lightBlue p-2 text-white hover:bg-black hover:transition dark:hover:bg-white dark:hover:text-darkBlue'
         >
-          {isLoading ? 'Loading...' : 'Submit'}
+          {isLoading ? t('loadingButton') : t('submitButton')}
         </button>
       </form>
     </div>

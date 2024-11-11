@@ -1,6 +1,7 @@
 import ToggleBtn from './ToggleBtn';
 import Link from 'next/link';
 import ToggleTheme from './ToggleTheme';
+import LocalSwitcher from './LocalSwitcher';
 
 const Header = () => {
   return (
@@ -12,7 +13,8 @@ const Header = () => {
         href='/'
         className='my-auto text-2xl font-bold tracking-wide'
       >{`</> Zarzycki`}</Link>
-      <div className='flex gap-10'>
+      <div className='flex gap-8 sm:gap-10'>
+        <LocalSwitcher />
         <ToggleTheme />
         <ToggleBtn />
       </div>

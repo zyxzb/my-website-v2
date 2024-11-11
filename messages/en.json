@@ -5,11 +5,42 @@
     "animatedText1": "I'm Bartek..",
     "animatedText2": "Frontend/React developer..",
     "animatedText3": "Let's Work Together!",
-    "about": "I have experience in telecommunications and e-commerce, but I realized that I am more interested in writing code. In addition to coding, I enjoy photography, keeping up with new technologies, biking, and listening to electronic music. If you&apos;re looking for a reliable and enthusiastic Frontend/React developer to work with, let&apos;s team up and create something amazing!",
+    "about": "I have experience in telecommunications and e-commerce, but I realized that I am more interested in writing code. In addition to coding, I enjoy photography, keeping up with new technologies, biking, and listening to electronic music. If you're looking for a reliable and enthusiastic Frontend/React developer to work with, let's team up and create something amazing!",
     "myProjectText": "Check out some of my recent projects",
     "myProjectButton": "My Projects",
     "leaveMessageText": "Leave me a message",
     "leaveMessageButton": "Contact"
+  },
+  "ProjectsPage": {
+    "title": "Projects Page",
+    "searchInputLabel": "Search Projects",
+    "searchInputPlaceholder": "Search by name or tags.."
+  },
+  "ContactPage": {
+    "title": "Contact Page",
+    "paragraph1": "Let's Work Together on Your next Frontend/React project!",
+    "paragraph2": "If you're looking for a reliable and enthusiastic Frontend/React developer to work with, let's team up and create something amazing. I am committed to providing exceptional service and ensuring that your project is completed on time and within budget.",
+    "paragraph3": "Please feel free to contact me with any questions or job opportunities you may have, and I will respond promptly. Let's take your project to the next level!",
+    "inputFirstNameLabel": "First name",
+    "inputFirstNamePlaceholder": "First name",
+    "inputLastNameLabel": "Last Name",
+    "inputLastNamePlaceholder": "Last Name (optional)",
+    "inputEmailLabel": "Email address",
+    "inputEmailPlaceholder": "Email address",
+    "inputPhoneLabel": "Phone number",
+    "inputPhonePlaceholder": "Phone number (optional)",
+    "textAreaLabel": "Your message",
+    "textAreaPlaceholder": "Your message...",
+    "submitButton": "Submit",
+    "loadingButton": "Loading...",
+    "firstNameZodValidation": "First name is required",
+    "emailLengthZodValidation": "Email is required.",
+    "emailValidZodValidation": "Must be a valid email",
+    "messageZodValidation": "Message is required"
+  },
+  "AboutPage": {
+    "title": "About Page",
+    "text": "This page has no content yet"
   },
   "Navigation": {
     "home": "Home",

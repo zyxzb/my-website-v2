@@ -1,10 +1,11 @@
 'use client';
 
 import { useCallback, useState } from 'react';
+import { useTranslations } from 'next-intl';
+import debounce from 'lodash/debounce';
+
 import Card, { ProjectProps } from './Card';
 import Input from './Input';
-
-import debounce from 'lodash/debounce';
 
 interface ProjectsGalleryProps {
   projects: ProjectProps[];
@@ -13,6 +14,8 @@ interface ProjectsGalleryProps {
 const ProjectsGallery = ({ projects }: ProjectsGalleryProps) => {
   const [searchedProjects, setSearchedProjects] =
     useState<ProjectProps[]>(projects);
+
+  const t = useTranslations('ProjectsPage');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value.toLowerCase();
@@ -31,10 +34,10 @@ const ProjectsGallery = ({ projects }: ProjectsGalleryProps) => {
     <>
       <div className='my-8'>
         <Input
-          label='Search Projects'
+          label={t('searchInputLabel')}
           type='text'
           name='search'
-          placeholder='Search by name or tags..'
+          placeholder={t('searchInputPlaceholder')}
           onChange={debouncedHandleSearch}
         />
       </div>

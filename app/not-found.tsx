@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Small from '../components/Small';
+import Small from './components/Small';
 
 const NotFound = () => {
   return (
