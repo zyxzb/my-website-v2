@@ -43,7 +43,7 @@ const RootLayout = async ({
             <Header />
             <div className='relative mx-auto flex w-full max-w-screen-2xl tracking-wide'>
               <Nav />
-              <main className='h-screen w-full overflow-auto px-3 pb-[40px] pt-24 md:px-6'>
+              <main className='h-100dvh w-full overflow-auto px-3 pb-[40px] pt-24 md:px-6'>
                 {children}
               </main>
             </div>

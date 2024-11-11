@@ -32,7 +32,7 @@ export default function LocalSwitcher() {
       <p className='sr-only'>change language</p>
       <select
         defaultValue={localActive}
-        className='bg-transparent p-1 sm:p-2'
+        className='bg-transparent p-1 py-0.5 sm:p-2'
         onChange={onSelectChange}
         disabled={isPending}
       >
