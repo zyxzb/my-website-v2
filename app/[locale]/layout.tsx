@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     'React and Next.js developer services in Warsaw and remotely ✔️ Boost your project with high-quality FrontEnd expertise ⚡ Let&apos;s find the best solution for your business',
 };
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 const RootLayout = async ({
   children,
   params: { locale },
