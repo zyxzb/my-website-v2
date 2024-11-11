@@ -54,6 +54,7 @@ const Card = async ({ project }: CardProps) => {
           className={`h-full w-full object-cover`}
           width={500}
           height={300}
+          loading='lazy'
         />
       </div>
       {/* Tech  */}
