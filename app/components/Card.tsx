@@ -1,6 +1,7 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { urlFor } from '@/lib/sanity';
+import ImageServer from './ImageServer';
+import Tags from './Tags';
 
 export type ProjectProps = {
   _id: string;
@@ -17,10 +18,10 @@ interface CardProps {
   project: ProjectProps;
 }
 
-const ClientCard = async ({ project }: CardProps) => {
+const Card = async ({ project }: CardProps) => {
   const { name, githubUrl, liveUrl, images, tags } = project;
   return (
-    <div className='group relative mb-3 inline-block w-full overflow-hidden rounded-md border border-darkBlue transition-[border-color] duration-500 last-of-type:mb-0 dark:border-white lg:mb-6'>
+    <div className='group relative inline-block max-h-max w-full overflow-hidden rounded-md border border-darkBlue transition-[border-color] duration-500 last-of-type:mb-0 dark:border-white'>
       {/* Top */}
       <div className='flex justify-between p-2 lg:p-3'>
         <div className='line-clamp-1 w-[70%]'>{name}</div>
@@ -47,29 +48,21 @@ const ClientCard = async ({ project }: CardProps) => {
       </div>
       {/* Img section */}
       <div className='relative'>
-        <Image
+        <ImageServer
           src={urlFor(images[0]).url()}
           alt={name}
           className={`h-full w-full object-cover`}
           width={500}
           height={300}
+          loading='lazy'
         />
       </div>
       {/* Tech  */}
       <div className={`max-h-max w-full p-2 text-sm lg:p-3`}>
-        <ul className='flex flex-wrap gap-2 text-center lg:gap-3'>
-          {tags.map((el) => (
-            <li
-              className='max-h-max cursor-pointer rounded-2xl border border-darkBlue p-2 transition-[border-color] hover:border-lightBlue hover:text-lightBlue hover:transition dark:border-white dark:hover:border-lightBlue'
-              key={el}
-            >
-              {el}
-            </li>
-          ))}
-        </ul>
+        <Tags tags={tags} />
       </div>
     </div>
   );
 };
 
-export default ClientCard;
+export default Card;
