@@ -1,10 +1,16 @@
-import { useTranslations } from 'next-intl';
 import Form from '../../components/Form';
 import FormText from '../../components/FormText';
 import Small from '../../components/Small';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-const ContactPage = () => {
-  const t = useTranslations('ContactPage');
+const ContactPage = async ({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) => {
+  // Enable static rendering
+  setRequestLocale(locale);
+  const t = await getTranslations('ContactPage');
 
   return (
     <div>

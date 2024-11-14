@@ -1,6 +1,6 @@
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import HomeTextSection from '../components/HomeTextSection';
 import Small from '../components/Small';
-import { useTranslations } from 'next-intl';
 
 import dynamic from 'next/dynamic';
 
@@ -16,8 +16,14 @@ const DynamicTitleAnimation = dynamic(
   },
 );
 
-const HomePage = () => {
-  const t = useTranslations('HomePage');
+const HomePage = async ({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) => {
+  // Enable static rendering
+  setRequestLocale(locale);
+  const t = await getTranslations('HomePage');
 
   return (
     <div>
