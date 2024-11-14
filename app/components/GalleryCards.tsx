@@ -1,8 +1,12 @@
+'use client';
+
+import Masonry from 'react-layout-masonry';
+
 const GalleryCards = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-7'>
+    <Masonry columns={{ 640: 1, 768: 2 }} gap={16}>
       {children}
-    </div>
+    </Masonry>
   );
 };
 

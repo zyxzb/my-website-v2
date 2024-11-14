@@ -18,7 +18,7 @@ interface CardProps {
   project: ProjectProps;
 }
 
-const Card = async ({ project }: CardProps) => {
+const Card = ({ project }: CardProps) => {
   const { name, githubUrl, liveUrl, images, tags } = project;
   return (
     <div className='group relative inline-block max-h-max w-full overflow-hidden rounded-md border border-darkBlue transition-[border-color] duration-500 last-of-type:mb-0 dark:border-white'>
