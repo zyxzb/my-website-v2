@@ -3,9 +3,7 @@ import { getTranslations } from 'next-intl/server';
 
 import Small from '@/app/components/Small';
 import GalleryInput from '@/app/components/GalleryInput';
-import { getProjects } from '@/lib/queries';
-import GalleryCards from '@/app/components/GalleryCards';
-import Card from '@/app/components/Card';
+import GalleryServer from '@/app/components/GalleryServer';
 
 const ProjectsPage = async ({
   searchParams,
@@ -15,19 +13,16 @@ const ProjectsPage = async ({
   };
 }) => {
   const t = await getTranslations('ProjectsPage');
-  const projects = await getProjects(searchParams.q);
 
   return (
     <div>
       <Small>{t('title')}</Small>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense>
         <GalleryInput q={searchParams.q} />
       </Suspense>
-      <GalleryCards>
-        {projects.map((project: any) => (
-          <Card key={project._id} project={project} />
-        ))}
-      </GalleryCards>
+      <Suspense key={searchParams.q} fallback={<p>Loading projects...</p>}>
+        <GalleryServer query={searchParams.q} />
+      </Suspense>
     </div>
   );
 };
