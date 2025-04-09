@@ -4,12 +4,13 @@ import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useTranslations } from 'next-intl';
 
 import Input from './Input';
 import TextArea from './TextArea';
+
+import { sendEmail } from '@/actions/sendEmail';
 
 const Form = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -39,20 +40,16 @@ const Form = () => {
     resolver: zodResolver(validationSchema),
   });
 
-  const onSubmit: SubmitHandler<ValidationSchema> = (data) => {
+  const onSubmit: SubmitHandler<ValidationSchema> = async (data) => {
     setIsLoading(true);
-
-    axios
-      .post('/api/sendEmail', data)
-      .then(({ data }) => {
-        toast.success(data.message);
-        reset();
-      })
-      .catch((error) => {
-        console.log(error);
-        toast.error(error.message);
-      })
-      .finally(() => setIsLoading(false));
+    const result = await sendEmail(data);
+    if (result.success) {
+      toast.success(result.message);
+      reset();
+    } else {
+      toast.error(result.message);
+    }
+    setIsLoading(false);
   };
 
   return (
