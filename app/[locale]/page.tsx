@@ -1,20 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import HomeTextSection from '../components/HomeTextSection';
 import Small from '../components/Small';
-
-import dynamic from 'next/dynamic';
-
-const DynamicTitleAnimation = dynamic(
-  () => import('../components/TitleAnimation'),
-  {
-    loading: () => (
-      <h1 className='text-bold my-8 text-3xl font-bold sm:text-5xl md:my-14'>
-        Loading...
-      </h1>
-    ),
-    ssr: false,
-  },
-);
+import TitleAnimationWrapper from '../components/TitleAnimationWrapper';
 
 const HomePage = async ({
   params: { locale },
@@ -30,7 +17,7 @@ const HomePage = async ({
       <Small>{t('title')}</Small>
       <div className='mx-auto max-w-[800px] text-center'>
         <span className='text-bold my-10 sm:text-xl'>{t('greeting')} 👋</span>
-        <DynamicTitleAnimation />
+        <TitleAnimationWrapper />
         <HomeTextSection />
       </div>
     </div>
