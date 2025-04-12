@@ -8,7 +8,7 @@ const DynamicTitleAnimation = dynamic(
         Loading...
       </h1>
     ),
-    ssr: false,
+    ssr: true,
   },
 );
 const TitleAnimationWrapper = () => {
