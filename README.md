@@ -9,7 +9,7 @@ Features:
 - Static Site Generation (SSG)
 - Framer Motion animations
 - Sanity CMS integration
-- Nodemailer with Gmail integration
+- Nodemailer with Gmail integration (server actions)
 - React Hook Form + Zod Validation
 
 ##  [Visit project url](https://zarzycki.tech/)
