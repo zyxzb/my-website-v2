@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import toast from 'react-hot-toast';
 import { useTranslations } from 'next-intl';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 import Input from './Input';
 import TextArea from './TextArea';
@@ -15,6 +16,7 @@ import { sendEmail } from '@/actions/sendEmail';
 const Form = () => {
   const [isPending, startTransition] = useTransition();
   const t = useTranslations('ContactPage');
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const validationSchema = z.object({
     firstName: z.string().min(1, { message: t('firstNameZodValidation') }),
@@ -42,7 +44,22 @@ const Form = () => {
 
   const onSubmit: SubmitHandler<ValidationSchema> = async (data) => {
     startTransition(async () => {
-      const result = await sendEmail(data);
+      if (!executeRecaptcha) {
+        toast.error('reCAPTCHA is not ready');
+        return;
+      }
+
+      const gRecaptchaToken = await executeRecaptcha('inquirySubmit');
+
+      if (!gRecaptchaToken) {
+        toast.error('Failed to get reCAPTCHA token');
+        return;
+      }
+
+      const result = await sendEmail({
+        ...data,
+        gRecaptchaToken,
+      });
       if (result.success) {
         toast.success(result.message);
         reset();

@@ -8,6 +8,7 @@ import { routing } from '@/i18n/routing';
 import Header from '../components/Header';
 import Nav from '../components/Nav';
 import ThemeProvider from '@/providers/ThemeProvider';
+import GoogleRecaptchaProvider from '@/providers/GoogleRecaptchaProvider';
 
 import { inconsolata } from '@/fonts/fonts';
 
@@ -44,14 +45,16 @@ const RootLayout = async ({
       >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
-            <Header />
-            <div className='relative mx-auto flex w-full max-w-screen-2xl tracking-wide'>
-              <Nav />
-              <main className='h-100dvh w-full overflow-auto px-3 pb-[40px] pt-24 md:px-6'>
-                {children}
-              </main>
-            </div>
-            <Toaster />
+            <GoogleRecaptchaProvider>
+              <Header />
+              <div className='relative mx-auto flex w-full max-w-screen-2xl tracking-wide'>
+                <Nav />
+                <main className='h-100dvh w-full overflow-auto px-3 pb-[40px] pt-24 md:px-6'>
+                  {children}
+                </main>
+              </div>
+              <Toaster />
+            </GoogleRecaptchaProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
