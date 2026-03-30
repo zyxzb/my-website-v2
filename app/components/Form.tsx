@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useTransition } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -13,7 +13,7 @@ import TextArea from './TextArea';
 import { sendEmail } from '@/actions/sendEmail';
 
 const Form = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
   const t = useTranslations('ContactPage');
 
   const validationSchema = z.object({
@@ -41,15 +41,15 @@ const Form = () => {
   });
 
   const onSubmit: SubmitHandler<ValidationSchema> = async (data) => {
-    setIsLoading(true);
-    const result = await sendEmail(data);
-    if (result.success) {
-      toast.success(result.message);
-      reset();
-    } else {
-      toast.error(result.message);
-    }
-    setIsLoading(false);
+    startTransition(async () => {
+      const result = await sendEmail(data);
+      if (result.success) {
+        toast.success(result.message);
+        reset();
+      } else {
+        toast.error(result.message);
+      }
+    });
   };
 
   return (
@@ -104,10 +104,10 @@ const Form = () => {
         />
         <button
           type='submit'
-          disabled={isLoading}
+          disabled={isPending}
           className='bg-lightBlue p-2 text-white hover:bg-black hover:transition dark:hover:bg-white dark:hover:text-darkBlue'
         >
-          {isLoading ? t('loadingButton') : t('submitButton')}
+          {isPending ? t('loadingButton') : t('submitButton')}
         </button>
       </form>
     </div>
