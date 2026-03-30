@@ -70,23 +70,23 @@ export async function sendEmail(formData: unknown) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.GMAIL_EMAIL_ADDRESS,
-        pass: process.env.GMAIL_APP_PASSWORD,
+        user: process.env.NEXT_GMAIL_EMAIL_ADDRESS,
+        pass: process.env.NEXT_GMAIL_APP_PASSWORD,
       },
     });
 
     await transporter.sendMail({
-      from: process.env.GMAIL_EMAIL_ADDRESS,
-      to: process.env.GMAIL_EMAIL_ADDRESS,
+      from: email,
+      to: process.env.NEXT_GMAIL_EMAIL_ADDRESS,
       replyTo: email,
       subject: 'Nowa wiadomość ze strony internetowej!',
       html: `
         <h3>Masz nową wiadomość ze strony internetowej!</h3>
         <br/>
         <p>Imię: ${firstName}</p>
-        ${lastName ? `<p>Nazwisko: ${lastName}</p>` : ''}
+        ${lastName && `<p>Nazwisko:${lastName}</p>`}
         <p>Adres e-mail nadawcy: ${email}</p>
-        ${phone ? `<p>Numer nadawcy: ${phone}</p>` : ''}
+        ${phone && `<p>Numer nadawcy: ${phone}</p>`}
         <p>Wiadomość: ${message}</p>
       `,
     });
