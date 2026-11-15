@@ -2,8 +2,10 @@
 
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { ChangeEvent, useTransition } from 'react';
+import { useTransition } from 'react';
+import type { ChangeEvent } from 'react';
 import { usePathname } from 'next/navigation';
+import { IoChevronDownOutline } from 'react-icons/io5';
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();
@@ -28,11 +30,11 @@ export default function LocalSwitcher() {
   };
 
   return (
-    <label className='border'>
+    <label className='relative inline-flex items-center border'>
       <p className='sr-only'>change language</p>
       <select
         defaultValue={localActive}
-        className='bg-transparent p-1 py-0.5 sm:p-2'
+        className='appearance-none bg-transparent py-0.5 pl-2 pr-7'
         onChange={onSelectChange}
         disabled={isPending}
       >
@@ -43,6 +45,10 @@ export default function LocalSwitcher() {
           PL
         </option>
       </select>
+      <IoChevronDownOutline
+        aria-hidden='true'
+        className='pointer-events-none absolute right-2 h-3 w-3'
+      />
     </label>
   );
 }
