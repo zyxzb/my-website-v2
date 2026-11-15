@@ -8,20 +8,22 @@ import GalleryServer from '@/app/components/GalleryServer';
 const ProjectsPage = async ({
   searchParams,
 }: {
-  searchParams: {
-    q?: string;
-  };
+  searchParams: Promise<{
+    q?: string | string[];
+  }>;
 }) => {
+  const { q } = await searchParams;
+  const query = typeof q === 'string' ? q : q?.[0];
   const t = await getTranslations('ProjectsPage');
 
   return (
     <div>
       <Small>{t('title')}</Small>
       <Suspense>
-        <GalleryInput q={searchParams.q} />
+        <GalleryInput q={query} />
       </Suspense>
-      <Suspense key={searchParams.q} fallback={<p>Loading projects...</p>}>
-        <GalleryServer query={searchParams.q} />
+      <Suspense key={query} fallback={<p>Loading projects...</p>}>
+        <GalleryServer query={query} />
       </Suspense>
     </div>
   );

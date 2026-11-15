@@ -1,13 +1,9 @@
 import Small from '@/app/components/Small';
-import { useTranslations } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
-const AboutPage = ({ params: { locale } }: { params: { locale: string } }) => {
-  // Enable static rendering
-  setRequestLocale(locale);
+const AboutPage = async (): Promise<React.JSX.Element> => {
+  const t = await getTranslations('AboutPage');
 
-  // useTranslation or await getTranslation, doesn't matter for enabling static rendering
-  const t = useTranslations('AboutPage');
   return (
     <div>
       <Small>{t('title')}</Small>

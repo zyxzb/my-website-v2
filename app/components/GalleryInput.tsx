@@ -18,7 +18,7 @@ const GalleryInput = ({ q }: { q?: string }) => {
   }, [q]);
 
   const debouncedUpdate = useRef(
-    debounce((searchTerm) => {
+    debounce((searchTerm: string): void => {
       const params = new URLSearchParams();
       if (searchTerm) {
         params.set('q', searchTerm);

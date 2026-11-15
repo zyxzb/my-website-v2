@@ -1,15 +1,9 @@
 import Form from '../../components/Form';
 import FormText from '../../components/FormText';
 import Small from '../../components/Small';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
-const ContactPage = async ({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) => {
-  // Enable static rendering
-  setRequestLocale(locale);
+const ContactPage = async (): Promise<React.JSX.Element> => {
   const t = await getTranslations('ContactPage');
 
   return (

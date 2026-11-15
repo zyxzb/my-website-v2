@@ -1,16 +1,10 @@
-'use client';
+import type { ReactNode } from 'react';
 
-import { motion } from 'framer-motion';
-
-const Template = ({ children }: { children: React.ReactNode }) => {
+const Template = ({ children }: { children: ReactNode }): React.JSX.Element => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ ease: 'easeInOut', duration: 0.75 }}
-    >
+    <div className='motion-safe:animate-[pageEnter_750ms_ease-in-out]'>
       {children}
-    </motion.div>
+    </div>
   );
 };
 

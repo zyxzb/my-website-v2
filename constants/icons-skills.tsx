@@ -1,6 +1,5 @@
 import {
   SiJavascript,
-  SiCss3,
   SiReact,
   SiRedux,
   SiBootstrap,
@@ -22,7 +21,7 @@ import {
   SiPrisma,
 } from 'react-icons/si';
 import { ImHtmlFive } from 'react-icons/im';
-import { FaSass, FaGithub, FaStripeS } from 'react-icons/fa';
+import { FaCss3Alt, FaSass, FaGithub, FaStripeS } from 'react-icons/fa';
 import { BiGitMerge } from 'react-icons/bi';
 import { TbApi } from 'react-icons/tb';
 import { MdAnimation } from 'react-icons/md';
@@ -37,7 +36,7 @@ export const iconsSkills = [
   },
   {
     id: uuidv4(),
-    icon: <SiCss3 />,
+    icon: <FaCss3Alt />,
     title: 'CSS',
   },
   {

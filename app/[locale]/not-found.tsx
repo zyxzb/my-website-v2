@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Small from '../components/Small';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/i18n/navigation';
 
 export default function NotFoundPage() {
   const t = useTranslations('NotFoundPage');

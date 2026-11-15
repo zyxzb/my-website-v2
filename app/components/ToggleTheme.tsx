@@ -3,14 +3,13 @@
 import { useThemeStore } from '@/lib/store.theme';
 import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
 
-const ToggleTheme = () => {
-  const theme = useThemeStore((store) => store.theme);
+const ToggleTheme = (): React.JSX.Element => {
   const toggleTheme = useThemeStore((store) => store.setTheme);
 
   return (
     <button type='button' aria-label='toggle theme' onClick={toggleTheme}>
-      {theme === 'light' && <IoSunnyOutline size={20} />}
-      {theme === 'dark' && <IoMoonOutline size={20} />}{' '}
+      <IoSunnyOutline size={20} className='dark:hidden' />
+      <IoMoonOutline size={20} className='hidden dark:block' />
     </button>
   );
 };

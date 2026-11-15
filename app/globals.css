@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+html[data-theme-changing] *,
+html[data-theme-changing] *::before,
+html[data-theme-changing] *::after {
+  transition: none !important;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: #12232e;

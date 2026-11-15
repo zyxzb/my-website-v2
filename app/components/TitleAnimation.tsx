@@ -1,26 +1,19 @@
 'use client';
 
 import { TypeAnimation } from 'react-type-animation';
-import { useTranslations } from 'next-intl';
 
-const TitleAnimation = () => {
-  const t = useTranslations('HomePage');
-
+const TitleAnimation = ({
+  texts,
+}: {
+  texts: readonly [string, string, string];
+}): React.JSX.Element => {
   return (
     <TypeAnimation
-      sequence={[
-        1000,
-        t('animatedText1'),
-        2000,
-        t('animatedText2'),
-        2000,
-        t('animatedText3'),
-        1000,
-      ]}
-      wrapper='h1'
+      sequence={[1000, texts[0], 2000, texts[1], 2000, texts[2], 1000]}
+      wrapper='span'
       cursor={true}
       repeat={0}
-      className='text-bold my-8 text-3xl font-bold sm:text-5xl md:my-14'
+      className='col-start-1 row-start-1'
     />
   );
 };

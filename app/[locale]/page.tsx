@@ -1,15 +1,9 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import HomeTextSection from '../components/HomeTextSection';
 import Small from '../components/Small';
 import TitleAnimationWrapper from '../components/TitleAnimationWrapper';
 
-const HomePage = async ({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) => {
-  // Enable static rendering
-  setRequestLocale(locale);
+const HomePage = async (): Promise<React.JSX.Element> => {
   const t = await getTranslations('HomePage');
 
   return (

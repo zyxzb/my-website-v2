@@ -1,5 +1,5 @@
 import { socialLinks } from '@/constants/social-links';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/i18n/navigation';
 import { MdMail } from 'react-icons/md';
 
 const NavLinksBottom = () => {
@@ -13,7 +13,7 @@ const NavLinksBottom = () => {
                 href={link.url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center py-4 capitalize hover:text-lightBlue hover:transition xSmallHeight:py-0'
+                className='flex items-center py-4 capitalize transition-colors duration-300 hover:text-lightBlue xSmallHeight:py-0'
               >
                 <div className='pr-3 xSmallHeight:pr-1'>{link.icon}</div>
                 {link.name}
@@ -24,7 +24,7 @@ const NavLinksBottom = () => {
         <li>
           <Link
             href='/contact'
-            className='flex items-center py-4 capitalize hover:text-lightBlue hover:transition xSmallHeight:py-0'
+            className='flex items-center py-4 capitalize transition-colors duration-300 hover:text-lightBlue xSmallHeight:py-0'
           >
             <div className='pr-3 xSmallHeight:pr-1'>
               <MdMail />

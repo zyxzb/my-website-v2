@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname, Link } from '@/i18n/routing';
+import { usePathname, Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 
 import { navLinks } from '@/constants/nav-links';
@@ -23,7 +23,7 @@ const NavLinksTop = () => {
                 href={link.url}
                 onClick={() => closeNav()}
                 className={cn(
-                  `flex w-full items-center py-4 first-letter:uppercase hover:text-lightBlue hover:transition xSmallHeight:py-2 ${
+                  `flex w-full items-center py-4 transition-colors duration-300 first-letter:uppercase hover:text-lightBlue xSmallHeight:py-2 ${
                     pathname === link.url ? 'text-lightBlue' : ''
                   }`,
                 )}
