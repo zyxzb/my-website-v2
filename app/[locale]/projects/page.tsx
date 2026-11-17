@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import Small from '@/app/components/Small';
 import GalleryInput from '@/app/components/GalleryInput';
 import GalleryServer from '@/app/components/GalleryServer';
+import GalleryLoading from '@/app/components/GalleryLoading';
 
 const ProjectsPage = async ({
   searchParams,
@@ -22,7 +23,7 @@ const ProjectsPage = async ({
       <Suspense>
         <GalleryInput q={query} />
       </Suspense>
-      <Suspense key={query} fallback={<p>Loading projects...</p>}>
+      <Suspense key={query} fallback={<GalleryLoading />}>
         <GalleryServer query={query} />
       </Suspense>
     </div>
