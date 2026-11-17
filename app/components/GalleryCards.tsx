@@ -1,6 +1,8 @@
 'use client';
 
-import Masonry from 'react-layout-masonry';
+import dynamic from 'next/dynamic';
+
+const Masonry = dynamic(() => import('react-layout-masonry'), { ssr: false });
 
 const GalleryCards = ({ children }: { children: React.ReactNode }) => {
   return (
